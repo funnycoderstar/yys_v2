@@ -1,0 +1,20 @@
+@import './util.less';
+.tabTitle {
+    color:red;
+    width: 25%;
+    float: left;
+    .px2rem(font-size, 30);
+    text-align: center;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 250493 */
+  src: url('//at.alicdn.com/t/font_fmac11hqlr2dfgvi.eot');
+  src: url('//at.alicdn.com/t/font_fmac11hqlr2dfgvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_fmac11hqlr2dfgvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_fmac11hqlr2dfgvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_fmac11hqlr2dfgvi.svg#iconfont') format('svg');
+}
+.icon::before{
+    font-family: "iconfont" !important;
+    content: '&#xe6bb;';
+}
