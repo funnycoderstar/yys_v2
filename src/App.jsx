@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Hello from './components/Hello';
+import HeroHead from './components/hero/heroHead';
 
 // App can't be stateless component
 export default class App extends Component {
@@ -15,6 +16,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                <HeroHead />
                 <Hello />
                 {/* <div>{this.state.count}</div>
                 <button onClick={this.handleClick}>click</button>*/}
