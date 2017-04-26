@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+/* import React, { Component, PropTypes } from 'react';
 import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
 
 import index from '../Component/index'; // 销售录入
@@ -52,4 +52,4 @@ const RouteConfig = (
     </Router>
 );
 
-export default RouteConfig;
+export default RouteConfig;*/

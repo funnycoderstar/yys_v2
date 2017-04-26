@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// import { Link } from 'react-router';
 import '../styles/tab.less';
 
 class TabItem extends Component {
@@ -9,14 +9,14 @@ class TabItem extends Component {
     //         name: '首页',
     //     };
     // }
-    // handelClick: () => {
+    handelClick: () => {
 
-    // }
+    }
     render() {
         return (
-            <div>
-                {/* <i className="icon"><i/>*/}
-                <p className="tabTitle">{this.props.name}</p>
+            <div className="tabTitle">
+                <i className="icon" />
+                <p className="tabText" >{ this.props.name }</p>
             </div>
         );
     }

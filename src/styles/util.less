@@ -1,5 +1,5 @@
 .px2rem(@name,@px){
-    @{name}: @px/ 75 * 1rem;
+    @{name}: @px * 2/ 75 * 1rem;
 }
 * {
     margin: 0;
@@ -12,4 +12,32 @@
         display: block;
         clear: both;
     }
+}
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.layout(@primary: flex-start, @minor: flex-start) {
+    justify-content: @primary;
+    align-items: @minor;
+}
+
+.size(@width: 100%, @height: 100%) {
+    width: @width;
+    height: @height;
+}
+
+.bgc(@color) {
+    background-color: @color;
+}
+
+.bgi(@img) {
+    background-image: url(@img);
+}
+
+.font(@color: black, @size: 14px, @line-height: 120%) {
+    color: @color;
+    font-size: @size;
+    line-height: @line-height;
 }

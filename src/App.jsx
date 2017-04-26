@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import Hello from './components/Hello';
-import HeroHead from './components/hero/heroHead';
+import {
+    BrowserRouter as Router,
+    Route,
+} from 'react-router-dom';
+
+import TabBar from './components/tabBar';
+// import hero from './components/hero/heroHead';
+// import raider from './components/raiders/raiders';
+// import recommend from './components/recommend/recommend';
+// import video from './components/video/video';
 
 // App can't be stateless component
 export default class App extends Component {
@@ -15,12 +23,14 @@ export default class App extends Component {
     // }
     render() {
         return (
-            <div>
-                <HeroHead />
-                <Hello />
-                {/* <div>{this.state.count}</div>
-                <button onClick={this.handleClick}>click</button>*/}
-            </div>
+            <Router history={history}>
+                <Route path="/" component={TabBar} >
+                    {/* <Route path="/hero" component={hero} />
+                    <Route path="/raider" component={raider} />
+                    <Route path="/recommend" component={recommend} />
+                    <Route path="/video" component={video} />*/}
+                </Route>
+            </Router>
         );
     }
 }
