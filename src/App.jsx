@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-} from 'react-router-dom';
+// import {
+//     BrowserRouter as Router,
+//     Route,
+// } from 'react-router-dom';
 
-import TabBar from './components/tabBar';
+// import TabBar from './components/tabBar';
+import TabBar from './components/tabItem';
 // import hero from './components/hero/heroHead';
 // import raider from './components/raiders/raiders';
 // import recommend from './components/recommend/recommend';
@@ -23,14 +24,19 @@ export default class App extends Component {
     // }
     render() {
         return (
-            <Router history={history}>
-                <Route path="/" component={TabBar} >
-                    {/* <Route path="/hero" component={hero} />
-                    <Route path="/raider" component={raider} />
-                    <Route path="/recommend" component={recommend} />
-                    <Route path="/video" component={video} />*/}
-                </Route>
-            </Router>
+            <div className="container" >
+                <TabBar>
+                    <div name="first">
+                        第一帧
+                    </div>
+                    <div name="second">
+                        第二帧
+                    </div>
+                    <div name="third">
+                        第三帧
+                    </div>
+                </TabBar>
+            </div >
         );
     }
 }
