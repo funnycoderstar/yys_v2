@@ -26,6 +26,9 @@ module.exports = {
         alias: {
             react$: 'react/dist/react.js',
             '@': resolve('src'),
+            pages: resolve('src/pages'),
+            components: resolve('src/components'), // react component
+            features: resolve('src/features'), // react features component
         },
     },
     module: {
