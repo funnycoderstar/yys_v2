@@ -1,0 +1,70 @@
+@import './util.less';
+.tabBar {
+    width: 100%;
+    .px2rem(height, 50);
+    .px2rem(line-height, 50);
+    background-color: #f5f5f5;
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    border-top: 1px solid #e5e5e5;
+}
+.tabTitle {
+    width: 25%;
+    float: left;
+    .px2rem(font-size, 15);
+    text-align: center;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 250493 */
+  src: url('//at.alicdn.com/t/font_eqc7cogotq8semi.eot');
+  src: url('//at.alicdn.com/t/font_eqc7cogotq8semi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_eqc7cogotq8semi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_eqc7cogotq8semi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_eqc7cogotq8semi.svg#iconfont') format('svg');
+}
+.icon:before{
+    font-family: "iconfont" !important;
+    content: '\e6bb';
+    font-style: normal;
+    .px2rem(font-size, 20);
+    .px2rem(top, -10);
+    position: relative;
+}
+.icon2:before {
+    content: '\e620';
+    font-family: "iconfont" !important;
+    font-style: normal;
+    .px2rem(font-size, 20);
+    .px2rem(top, -10);
+    position: relative;
+}
+.icon3:before {
+    content: '\e62d';
+    font-family: "iconfont" !important;
+    font-style: normal;
+    .px2rem(font-size, 22);
+    .px2rem(top, -10);
+    position: relative;
+}
+.icon4:before {
+    content: '\e65e';
+    font-family: "iconfont" !important;
+    font-style: normal;
+    .px2rem(font-size, 25);
+    .px2rem(top, -10);
+    position: relative;
+}
+.iconSearch:before{
+    content: '\e62c';
+    position: fixed;
+    color: #999;
+    .px2rem(top, 17);
+    .px2rem(left, 140);
+    .px2rem(font-size, 15);
+}
+.tabText {
+    .px2rem(font-size, 13);
+    .px2rem(top, -40);
+    position: relative;
+}

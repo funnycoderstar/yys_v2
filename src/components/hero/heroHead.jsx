@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import '../../styles/heroHead.less';
 
-class HomeHead extends Component {
+class heroHead extends Component {
 
     render() {
         return (
             <div>
-                <input className="searchInput" placeholder="搜索式神" />
+                <div className="searchInput">
+                    <i className="icon iconSearch" />
+                    <input className="search" placeholder="搜索式神" />
+                </div>
             </div>
         );
     }
 }
 
-export default HomeHead;
+export default heroHead;
