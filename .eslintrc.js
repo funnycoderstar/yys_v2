@@ -27,6 +27,7 @@ module.exports = {
         'import/no-unresolved': 0,
         'import/no-commonjs': 0,
         'import/no-nodejs-modules': 0,
+        'import/extensions': 0,
 
         'no-console': 0,
         'no-plusplus': 0,
@@ -34,6 +35,7 @@ module.exports = {
         'no-restricted-syntax': [2, 'WithStatement'],
         'no-invalid-this': 0,
         'no-useless-return': 0,
+        'no-useless-escape': 0,
 
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -47,5 +49,6 @@ module.exports = {
         'jsx-a11y/no-static-element-interactions': 0,
         'react/prop-types': 0,
         'linebreak-style': 0,
+        'react/jsx-no-bind': 0,
     }
 };
