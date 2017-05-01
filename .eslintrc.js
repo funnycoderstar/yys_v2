@@ -22,6 +22,7 @@ module.exports = {
         'camelcase': 0,
         'brace-style': 0,
         'no-alert': 0,
+        'eol-last': 0,
 
         'import/no-extraneous-dependencies': 0,
         'import/no-unresolved': 0,
