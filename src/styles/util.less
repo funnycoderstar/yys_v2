@@ -1,6 +1,12 @@
 .px2rem(@name,@px){
     @{name}: @px * 2/ 75 * 1rem;
 }
+.px2remM(@name,@px){
+    @{name}: @px * 2/ 75 * 1rem !important;
+}
+.comDis(@name,@px1,@px2){
+    @{name}: @px1 * 2 / 75 * 1rem  @px2 * 2 / 75 * 1rem;
+}
 * {
     margin: 0;
     padding: 0;
