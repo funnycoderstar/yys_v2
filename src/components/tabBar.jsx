@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Hero from 'components/hero/heroHead';
+import Hero from 'components/hero/hero';
 import Raider from 'components/raiders/raiders';
 import Recommend from 'components/recommend/recommend';
 import Video from 'components/video/video';

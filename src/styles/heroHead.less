@@ -1,8 +1,13 @@
 @import '../styles/util.less';
+.heroHead {
+position: fixed;
+width:100%;
+z-index: 50;
 .searchInput {
     .px2rem(width, 280);
     .px2rem(padding-right, 20);
     .px2rem(height, 30);
+    background-color:#fff;
     .px2rem(border-radius, 15);
     border: 1px solid #e5e5e5;
     margin: 0 auto;
@@ -20,4 +25,5 @@
     .search:focus {
          outline: 0;
     }
+}
 }
