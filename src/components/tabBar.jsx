@@ -25,7 +25,7 @@ class TabBar extends Component {
                 <Video style={{ display: this.state.selected === 4 ? 'block' : 'none' }} />
                 <div className="tabBar">
                     {
-                        [{ name: '式神', content: 'icon' }, { name: '推荐', content: 'icon2' }, { name: '视频', content: 'icon3' }, { name: '攻略', content: 'icon4' }].map((item, index) => (
+                        [{ name: '式神', content: 'icon1' }, { name: '推荐', content: 'icon2' }, { name: '视频', content: 'icon3' }, { name: '攻略', content: 'icon4' }].map((item, index) => (
                             <div
                                 key={index}
                                 className="tabTitle"

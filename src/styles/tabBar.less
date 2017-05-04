@@ -17,13 +17,17 @@
 }
 @font-face {
   font-family: 'iconfont';  /* project id 250493 */
-  src: url('//at.alicdn.com/t/font_cdt14aq2v55yu8fr.eot');
-  src: url('//at.alicdn.com/t/font_cdt14aq2v55yu8fr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_cdt14aq2v55yu8fr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_cdt14aq2v55yu8fr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_cdt14aq2v55yu8fr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_on8q7s1aqipsc3di.eot');
+  src: url('//at.alicdn.com/t/font_on8q7s1aqipsc3di.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_on8q7s1aqipsc3di.woff') format('woff'),
+  url('//at.alicdn.com/t/font_on8q7s1aqipsc3di.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_on8q7s1aqipsc3di.svg#iconfont') format('svg');
 }
-.icon:before{
+.icon {
+    font-family: "iconfont" !important;
+    font-style: normal;
+}
+.icon1:before{
     font-family: "iconfont" !important;
     content: '\e6bb';
     font-style: normal;
@@ -59,8 +63,8 @@
     content: '\e62c';
     position: fixed;
     color: #999;
-    .px2rem(top, 17);
-    .px2rem(left, 140);
+    .px2rem(top, 13);
+    .px2rem(left, 130);
     .px2rem(font-size, 15);
 }
 .iconNotice:before {
