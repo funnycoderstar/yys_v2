@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import '../../styles/heroHead.less';
 
 class heroHead extends Component {
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired,
+    }
     handleSearch = () => {
-        // console.log(window.location.href);
-        window.location.href = '/search';
+        console.log(this.context.router.history.push('/search'));
     }
 
     render() {

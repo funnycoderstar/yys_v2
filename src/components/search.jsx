@@ -18,7 +18,7 @@ class search extends Component {
         this.setState({ isShowResult: false });
     }
     handleBack = () => {
-        window.history.go(-1);
+        this.props.history.goBack();
     }
     render() {
         return (
