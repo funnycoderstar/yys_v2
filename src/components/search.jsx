@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
+import Alert from './alert.jsx';
 import '../styles/search.less';
 
 class search extends Component {
+    constructor(...args) {
+        super(...args);
+        this.state = {
+            isShowAlert: false,
+            isShowResult: true,
+        };
+    }
+    handleClick = () => {
+        this.setState({ isShowAlert: !this.state.isShowAlert });
+    }
+    handleDelete = () => {
+        this.setState({ isShowAlert: false });
+        this.setState({ isShowResult: false });
+    }
+
     render() {
         return (
             <div className="searchPage">
+                <Alert alertcontent="确定要删除历史记录么?" style={{ display: this.state.isShowAlert ? 'block' : 'none' }} handleClick={this.handleClick} handleDelete={this.handleDelete} />
                 <div className="search fix-float">
                     <div>
                         <i className="icon iconLeft" />
@@ -14,8 +31,8 @@ class search extends Component {
                         <input className="searchText" placeholder="搜索式神" />
                     </div>
                 </div>
-                <div className="historySearch">
-                    <div className="title">历史搜索 <i className="icon iconDelete" /></div>
+                <div className="historySearch" style={{ display: this.state.isShowResult ? 'block' : 'none' }}>
+                    <div className="title">历史搜索 <i className="icon iconDelete" onClick={this.handleClick} /></div>
                     <div className="historyResult result fix-float">
                         <span>犬神</span>
                         <span>跳跳弟弟</span>

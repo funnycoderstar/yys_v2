@@ -10,8 +10,8 @@ class alert extends Component {
                         {this.props.alertcontent}
                     </div>
                     <div className="alertBtn">
-                        <p>取消</p>
-                        <p onClick={this.props.handleClick}>确定</p>
+                        <p onClick={this.props.handleClick}>取消</p>
+                        <p onClick={this.props.handleDelete}>确定</p>
                     </div>
                 </div>
 
