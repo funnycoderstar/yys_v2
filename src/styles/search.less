@@ -1,0 +1,75 @@
+@import './util.less';
+.searchPage {
+    background-color: #f5f5f5;
+    .px2rem(height, 667);
+    .search {
+        .px2rem(height, 50);
+        overflow: hidden;
+        background-color: lightblue;
+        display: flex;
+        justify-content: space-between;
+        .searchWrap {
+            .px2rem(width, 300);
+            .px2rem(padding-right, 20);
+            .px2rem(height, 30);
+            background-color:#fff;
+            .px2rem(border-radius, 15);
+            border: 1px solid #e5e5e5;
+            margin: 0 auto;
+            text-align: center;
+            color: #c8c8c8;
+            .px2rem(margin-top, 10);
+            display: block;
+        .searchText {
+            .px2rem(font-size,13);
+            .px2rem(height, 30);
+            float: right;
+            .px2rem(width, 270);
+            .px2rem(line-height, 30);
+            background-color: #fff;
+        }
+        .iconsearch:before{
+            content: '\e62c';
+            float: left;
+            .px2rem(margin-top, 14);
+            .px2rem(margin-left, 10);
+            .px2rem(font-size, 15);
+        }
+        .searchText:focus {
+            outline: 0;
+        }
+    }
+    .iconLeft:before{
+            content: '\e612';
+            color:#fff;
+            float: left;
+            .px2rem(margin-top, 18);
+            .px2rem(margin-left, 5);
+        }
+    }
+    .iconDelete:before {
+        content: '\e602';
+        color:#969696;
+        float: right;
+        .px2rem(font-size, 14);
+        .px2rem(margin-top, 8);
+    }
+    .title {
+        .px2rem(font-size, 13);
+        .px2rem(padding, 10);
+        color:#969696;
+    }
+    .result {
+        .px2rem(padding, 10);
+        .px2rem(font-size, 12);
+        background-color: #fff;
+        color: #333;
+        span {
+            border: 1px solid #e5e5e5;
+            .comDis(padding, 5,10);
+            border-radius: 4px;
+            float:left;
+            .px2rem(margin-right, 10);
+        }
+    }
+}
