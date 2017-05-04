@@ -17,14 +17,16 @@ class search extends Component {
         this.setState({ isShowAlert: false });
         this.setState({ isShowResult: false });
     }
-
+    handleBack = () => {
+        window.history.go(-1);
+    }
     render() {
         return (
             <div className="searchPage">
                 <Alert alertcontent="确定要删除历史记录么?" style={{ display: this.state.isShowAlert ? 'block' : 'none' }} handleClick={this.handleClick} handleDelete={this.handleDelete} />
                 <div className="search fix-float">
                     <div>
-                        <i className="icon iconLeft" />
+                        <i className="icon iconLeft" onClick={this.handleBack} />
                     </div>
                     <div className="searchWrap">
                         <i className="icon iconsearch" />

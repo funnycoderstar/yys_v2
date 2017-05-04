@@ -1,0 +1,26 @@
+@import './util.less';
+.list {
+    .px2rem(padding, 10);
+    .px2rem(font-size, 14);
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    .px2rem(margin-bottom, 10);
+    .listImg {
+        .px2rem(width, 50);
+        img {
+            .px2rem(width, 50);
+            .px2rem(height, 50);
+        }
+    }
+    .listContent {
+        .aboutContent {
+            .px2rem(margin-top, 20);
+            .px2rem(font-size, 11);
+            color:#666;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
