@@ -5,7 +5,7 @@ class announcement extends Component {
     render() {
         return (
             <div className="index-announcement fix-float">
-                <i className="icon iconNotice" />
+                <i className="icon iconNotice">&#xe600;</i>
                 <p className="announcement-text">这是公告内容</p>
             </div>
         );

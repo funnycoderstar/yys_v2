@@ -7,6 +7,10 @@ import {
 
 import TabBar from './components/tabBar';
 import Search from './components/search';
+import HeroPhoto from './components/heroPhoto';
+import HeroBg from './components/heroBg';
+import HeroSkill from './components/heroSkill';
+import HeroTease from './components/heroTease';
 
 // App can't be stateless component
 export default class App extends Component {
@@ -17,6 +21,10 @@ export default class App extends Component {
                     <div>
                         <Route path="/index" component={TabBar} />
                         <Route path="/search" component={Search} />
+                        <Route path="/heroPhoto" component={HeroPhoto} />
+                        <Route path="/heroBg" component={HeroBg} />
+                        <Route path="/heroSkill" component={HeroSkill} />
+                        <Route path="/heroTease" component={HeroTease} />
                     </div>
                 </Router>
             </div >

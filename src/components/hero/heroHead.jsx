@@ -13,7 +13,7 @@ class heroHead extends Component {
         return (
             <div className="heroHead">
                 <div className="searchInput" onClick={this.handleSearch}>
-                    <i className="icon iconSearch" />
+                    <i className="icon iconSearch">&#xe62c;</i>
                     <p className="searchHero">搜索式神</p>
                 </div>
             </div>
