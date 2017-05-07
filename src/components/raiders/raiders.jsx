@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import HeroSwiper from './heroSwiper.jsx';
 
 class Raiders extends Component {
     render() {
         return (
             <div>
-                攻略
+                <HeroSwiper />
             </div>
         );
     }
