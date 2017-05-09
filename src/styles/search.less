@@ -9,7 +9,7 @@
         display: flex;
         justify-content: space-between;
         .searchWrap {
-            .px2rem(width, 300);
+            .px2rem(width, 330);
             .px2rem(padding-right, 20);
             .px2rem(height, 30);
             background-color:#fff;
@@ -20,31 +20,32 @@
             color: #c8c8c8;
             .px2rem(margin-top, 10);
             display: block;
-        .searchText {
-            .px2rem(font-size,13);
-            .px2rem(height, 30);
-            float: right;
-            .px2rem(width, 270);
-            .px2rem(line-height, 30);
-            background-color: #fff;
-        }
-        .iconsearch:before{
-            content: '\e62c';
-            float: left;
-            .px2rem(margin-top, 14);
-            .px2rem(margin-left, 10);
-            .px2rem(font-size, 15);
-        }
-        .searchText:focus {
-            outline: 0;
-        }
+                .searchText {
+                    .px2rem(font-size,13);
+                    // .px2rem(height, 30);
+                    float: right;
+                    .px2rem(width, 270);
+                    .px2rem(line-height, 29);
+                    background-color: #fff;
+                }
+                .iconsearch:before{
+                    content: '\e62c';
+                    float: left;
+                    .px2rem(margin-top, 2);
+                    .px2rem(margin-left, 10);
+                    .px2rem(font-size, 15);
+                }
+                .searchText:focus {
+                    outline: 0;
+                }
     }
     .iconLeft:before{
             content: '\e612';
             color:#fff;
             float: left;
-            .px2rem(margin-top, 18);
-            .px2rem(margin-left, 5);
+            .px2rem(margin-top, 8);
+            .px2rem(margin-left, 10);
+            .px2rem(font-size, 18);
         }
     }
     .iconDelete:before {
@@ -52,7 +53,6 @@
         color:#969696;
         float: right;
         .px2rem(font-size, 14);
-        .px2rem(margin-top, 8);
     }
     .title {
         .px2rem(font-size, 13);

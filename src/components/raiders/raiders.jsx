@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeroSwiper from './heroSwiper.jsx';
+import HeroSwiper from '../hero/heroSwiper.jsx';
 
 class Raiders extends Component {
     render() {
