@@ -11,6 +11,7 @@ import HeroPhoto from './components/heroPhoto';
 import HeroBg from './components/heroBg';
 import HeroSkill from './components/heroSkill';
 import HeroTease from './components/heroTease';
+import AboutHero from './components/aboutHero/aboutHero';
 
 // App can't be stateless component
 export default class App extends Component {
@@ -25,6 +26,7 @@ export default class App extends Component {
                         <Route path="/heroBg" component={HeroBg} />
                         <Route path="/heroSkill" component={HeroSkill} />
                         <Route path="/heroTease" component={HeroTease} />
+                        <Route path="/aboutHero" component={AboutHero} />
                     </div>
                 </Router>
             </div >
