@@ -6,7 +6,7 @@ class heroHead extends Component {
         router: React.PropTypes.object.isRequired,
     }
     handleSearch = () => {
-        console.log(this.context.router.history.push('/search'));
+        this.context.router.history.push('/search');
     }
 
     render() {

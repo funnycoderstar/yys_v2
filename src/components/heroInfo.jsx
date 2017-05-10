@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
 class heroInfo extends Component {
-
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired,
+    }
+    handleClick = () => {
+        this.context.router.history.push('/aboutHero');
+    }
     render() {
         return (
             <div className="heroInfo">
-                <div className="heroWrap">
+                <div className="heroWrap" onClick={this.handleClick}>
                     <div className="heroImg">
                         <img src={require('../assets/hei.jpg')} />
                     </div>
