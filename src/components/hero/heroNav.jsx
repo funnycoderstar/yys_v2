@@ -17,7 +17,7 @@ class heroNav extends Component {
                 </div>
                 <div onClick={() => this.handleClick('/heroSkill')}>
                     <p className="iconText"><i className="icon iconHero">&#xe63d;</i></p>
-                    <p>御魂秘籍</p>
+                    <p>御魂分类</p>
                 </div>
                 <div onClick={() => this.handleClick('/heroTease')}>
                     <p className="iconText"><i className="icon iconHero">&#xe626;</i></p>

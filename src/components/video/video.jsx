@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import HeroSwiper from '../hero/heroSwiper.jsx';
+import RaiderList from '../raiders/raiderList.jsx';
 
 class video extends Component {
     render() {
         return (
             <div>
-                视频
+                <HeroSwiper />
+                <RaiderList />
+                <RaiderList />
+                <RaiderList />
+                <RaiderList />
+                <RaiderList />
             </div>
         );
     }

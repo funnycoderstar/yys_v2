@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import HeroSwiper from '../hero/heroSwiper.jsx';
+import RaiderList from '../raiders/raiderList.jsx';
 
 class Recommend extends Component {
     render() {
         return (
             <div>
-                推荐
+                <HeroSwiper />
+                <RaiderList />
+                <RaiderList />
+                <RaiderList />
+                <RaiderList />
+                <RaiderList />
             </div>
         );
     }

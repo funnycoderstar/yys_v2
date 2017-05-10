@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import SkillList from './skillList.jsx';
 
 class heroTease extends Component {
     render() {
         return (
             <div>
-                斗图套路
+                <SkillList />
             </div>
         );
     }
