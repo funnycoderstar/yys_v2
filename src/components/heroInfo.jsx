@@ -4,29 +4,18 @@ class heroInfo extends Component {
     static contextTypes = {
         router: React.PropTypes.object.isRequired,
     }
-    handleClick = () => {
-        this.context.router.history.push('/aboutHero');
+    handleClick = (name) => {
+        this.context.router.history.push(`/aboutHero/${name}`);
     }
+
     render() {
         return (
             <div className="heroInfo">
-                <div className="heroWrap" onClick={this.handleClick}>
+                <div className="heroWrap" onClick={this.handleClick.bind(this, this.props.heroName)}>
                     <div className="heroImg">
-                        <img src={require('../assets/hei.jpg')} />
+                        <img src={this.props.imgSrc} />
                     </div>
-                    <p>黑童子</p>
-                </div>
-                <div className="heroWrap">
-                    <div className="heroImg">
-                        <img src={require('../assets/hei.jpg')} />
-                    </div>
-                    <p>黑童子</p>
-                </div>
-                <div className="heroWrap">
-                    <div className="heroImg">
-                        <img src={require('../assets/hei.jpg')} />
-                    </div>
-                    <p>黑童子</p>
+                    <p>{this.props.heroName}</p>
                 </div>
             </div>
         );

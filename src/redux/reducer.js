@@ -1,7 +1,7 @@
 import immutable from 'immutable';
 // import { updateHeros } from './action.js';
 
-const reducer = (state = immutable.fromJS({ heros: [], heroVideo: [], heroStrategy: [] }), action) => {
+const reducer = (state = immutable.fromJS({ heros: [], heroVideo: [], heroStrategy: [], heroDetail: [] }), action) => {
     switch (action.type) {
     case 'updateHeros': {
         return state.set('heros', action.heros);
@@ -11,6 +11,10 @@ const reducer = (state = immutable.fromJS({ heros: [], heroVideo: [], heroStrate
     }
     case 'updateHeroStrategy': {
         return state.set('heroStrategy', action.heroStrategy);
+    }
+    case 'updateHeroDetail': {
+        // console.log(action.heroDetail);
+        return state.set('heroDetail', action.heroDetail);
     }
     default: {
         return state;

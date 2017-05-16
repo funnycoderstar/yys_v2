@@ -6,12 +6,6 @@ class listWrap extends Component {
         return (
             <div>
                 <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
             </div>
         );
     }

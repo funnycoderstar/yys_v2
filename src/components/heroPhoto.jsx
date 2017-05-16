@@ -28,21 +28,21 @@ class heroPhoto extends Component {
                     <TabPane tab="SSR" key="1">
                         {
                             this.props.heros.map((item, index) => (
-                                <HeroInfo key={index} name={item.name} imgSrc={`${ApiUrl.apiUrl}${item.name}.jpg`} style={{ display: item.rarity === 'SSR' ? 'block' : 'none' }} />
+                                <HeroInfo key={index} heroName={item.name} imgSrc={`${ApiUrl.apiUrl}${item.name}.jpg`} style={{ display: item.rarity === 'SSR' ? 'block' : 'none' }} />
                             ))
                         }
                     </TabPane>
                     <TabPane tab="SR" key="2">
                         {
                             this.props.heros.map((item, index) => (
-                                <HeroInfo key={index} name={item.name} imgSrc={`${ApiUrl.apiUrl}${item.name}.jpg`} style={{ display: item.rarity === 'SR' ? 'block' : 'none' }} />
+                                <HeroInfo key={index} heroName={item.name} imgSrc={`${ApiUrl.apiUrl}${item.name}.jpg`} style={{ display: item.rarity === 'SR' ? 'block' : 'none' }} />
                             ))
                         }
                     </TabPane>
                     <TabPane tab="R" key="3">
                         {
                             this.props.heros.map((item, index) => (
-                                <HeroInfo key={index} name={item.name} imgSrc={`${ApiUrl.apiUrl}${item.name}.jpg`} style={{ display: item.rarity === 'R' ? 'block' : 'none' }} />
+                                <HeroInfo key={index} heroName={item.name} imgSrc={`${ApiUrl.apiUrl}${item.name}.jpg`} style={{ display: item.rarity === 'R' ? 'block' : 'none' }} />
                             ))
                         }
                     </TabPane>

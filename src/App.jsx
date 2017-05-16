@@ -26,7 +26,7 @@ class App extends Component {
                         <Route path="/heroBg" component={HeroBg} />
                         <Route path="/heroSkill" component={HeroSkill} />
                         <Route path="/heroTease" component={HeroTease} />
-                        <Route path="/aboutHero" component={AboutHero} />
+                        <Route path="/aboutHero/:heroName" component={AboutHero} />
                     </div>
                 </Router>
             </div >

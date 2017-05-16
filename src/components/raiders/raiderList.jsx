@@ -16,9 +16,11 @@ class raiderList extends Component {
 
     render() {
         return (
-            <div>{
+            <div>
+
+                {
                 this.props.heroStrategy.map((item, index) => (
-                    <div className="raiderList" key={index}>
+                    <a className="raiderList" key={index} href={item.href}>
                         <div className="listImg">
                             <img src={item.imgSrc} alt="" />
                         </div>
@@ -30,7 +32,7 @@ class raiderList extends Component {
                                 {item.desc[0]}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))
             }</div>
 

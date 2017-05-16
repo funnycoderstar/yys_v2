@@ -19,3 +19,9 @@ export function updateHeroStrategy(heroStrategy) {
     };
 }
 
+export function updateHeroDetail(heroDetails) {
+    return {
+        type: 'updateHeroDetail',
+        heroDetails,
+    };
+}

@@ -5,14 +5,14 @@ class heroSkill extends Component {
         return (
             <div className="heroSkill">
                 <div className="skillTitle">
-                    罪罚·黑
+                    {this.props.skillName}
                 </div>
                 <div className="skillList">
                     <div className="skillListTitle">
                         消耗
                     </div>
                     <div className="skillInfo">
-                        <p>0</p>
+                        <p>{this.props.consumption}</p>
                     </div>
                 </div>
                 <div className="skillList">
@@ -20,7 +20,7 @@ class heroSkill extends Component {
                         效果
                     </div>
                     <div className="skillInfo">
-                        <p>黑童子对1名敌人发起攻击，对目标造成100%的伤害，该伤害波动区间较大。</p>
+                        <p>{this.props.effect}</p>
                     </div>
                 </div>
                 <div className="skillList">
@@ -28,10 +28,13 @@ class heroSkill extends Component {
                         升级
                     </div>
                     <div className="skillInfo">
-                        <p>Lv.2技能伤害额外+5%</p>
-                        <p>Lv.3技能伤害额外+5%</p>
-                        <p>Lv.4技能伤害额外+5%</p>
-                        <p>Lv.5技能伤害额外+10%</p>
+                        {
+                            this.props.upgrade.map((item, index) => (
+                                <p key={index}>
+                                    {item}
+                                </p>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
