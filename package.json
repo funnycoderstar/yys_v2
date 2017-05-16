@@ -12,6 +12,7 @@
   "dependencies": {
     "antd": "^2.9.1",
     "axios": "^0.16.1",
+    "immutable": "^3.8.1",
     "lib-flexible": "^0.3.2",
     "mockjs": "^1.0.1-beta3",
     "normalize.css": "^6.0.0",
@@ -19,7 +20,8 @@
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
