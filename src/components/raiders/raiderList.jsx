@@ -1,24 +1,45 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
 import '../../styles/raiderList.less';
+import ApiUrl from '../../config/apiUrl.js';
 
 class raiderList extends Component {
+    componentDidMount() {
+        axios.get(ApiUrl.heroStrategyUrl).then((res) => {
+            this.props.dispatch({
+                type: 'updateHeroStrategy',
+                heroStrategy: res.data,
+            });
+        });
+    }
+
     render() {
         return (
-            <div className="raiderList">
-                <div className="listImg">
-                    <img src={require('../../assets/gongluo.jpg')} alt="" />
-                </div>
-                <div className="listContent">
-                    <div className="contentTitle">
-                        以津真天和鸩哪个好 两大SR新式神对比
-                   </div>
-                    <div className="aboutContent">
-                        阴阳师以津真天和鸩哪个好?作为两大SR新式神，都是带有羽毛的。本篇就来对比下以津真天和鸩的技能和实战效果，看看哪个给好用。
+            <div>{
+                this.props.heroStrategy.map((item, index) => (
+                    <div className="raiderList" key={index}>
+                        <div className="listImg">
+                            <img src={item.imgSrc} alt="" />
+                        </div>
+                        <div className="listContent">
+                            <div className="contentTitle">
+                                {item.title}
+                            </div>
+                            <div className="aboutContent">
+                                {item.desc[0]}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                ))
+            }</div>
+
         );
     }
 }
 
-export default raiderList;
+export default connect(
+    state => ({
+        heroStrategy: state.get('heroStrategy'),
+    }),
+)(raiderList);

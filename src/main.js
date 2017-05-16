@@ -1,20 +1,30 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
+// import 'lib-flexible';
+import { createStore } from 'redux';
 import App from './App';
-// import route from './router/route';
+import reducer from './redux/reducer.js';
 
 require('normalize.css');
-
 require('./config/match.js');
 
-// 使用mock.js拦截ajax请求
-if (process.env.NODE_ENV !== 'production') {
-    require('./mocks/index.js');
-}
+// // 使用mock.js拦截ajax请求
+// // if (process.env.NODE_ENV !== 'production') {
+// //     require('./mocks/index.js');
+// // }
 
-// import { Router, Route, Switch } from 'react-router';
 
+const store = createStore(reducer);
+// console.log(store.getState().toJS());
+// store.dispatch({
+//     type: 'updateHeros',
+//     heros: ['1'],
+// });
+// console.log(store.getState().toJS());
 ReactDom.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('app'),
 );

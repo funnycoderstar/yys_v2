@@ -14,7 +14,7 @@ import HeroTease from './components/heroTease';
 import AboutHero from './components/aboutHero/aboutHero';
 
 // App can't be stateless component
-export default class App extends Component {
+class App extends Component {
     render() {
         return (
             <div>
@@ -33,3 +33,5 @@ export default class App extends Component {
         );
     }
 }
+
+export default App;

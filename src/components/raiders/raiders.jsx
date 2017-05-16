@@ -8,10 +8,6 @@ class Raiders extends Component {
             <div>
                 <HeroSwiper />
                 <RaiderList />
-                <RaiderList />
-                <RaiderList />
-                <RaiderList />
-                <RaiderList />
             </div>
         );
     }
