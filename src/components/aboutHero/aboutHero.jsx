@@ -2,30 +2,38 @@ import React, { Component } from 'react';
 import {
     Tabs,
 } from 'antd';
+import { connect } from 'react-redux';
 import HeroSkill from './heroSkill.jsx';
 import '../../styles/aboutHero.less';
+import ApiUrl from '../../config/apiUrl.js';
+import { updateHeroDetail } from '../../redux/action.js';
+
 
 const TabPane = Tabs.TabPane;
 
 class aboutHero extends Component {
-    handleCallback = (key) => {
-        console.log(key);
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired,
+    }
+    componentWillMount() {
+        updateHeroDetail(this.props.dispatch, this.context.router.route.match.params.heroName);
     }
     render() {
+        const heroMessage = this.props.heroDetail[0];
         return (
             <div className="aboutHero">
                 <div className="heroMes heroItem">
                     <div className="heroImg">
-                        <img src={require('../../assets/hei.jpg')} />
+                        <img src={`${ApiUrl.apiUrl}${heroMessage.name}.jpg`} />
                     </div>
                     <div className="hero-info">
                         <ul>
-                            <li>名称: <span>黑童子</span></li>
-                            <li>CV: <span>杉田智和</span></li>
-                            <li>稀有度: <span>SR</span></li>
-                            <li>类型: <span>输出</span></li>
-                            <li>斗技指数: <span>5</span></li>
-                            <li>刷图指数: <span>4</span></li>
+                            <li>名称: <span>{heroMessage.name}</span></li>
+                            <li>CV: <span>{heroMessage.cv}</span></li>
+                            <li>稀有度: <span>{heroMessage.rarity}</span></li>
+                            <li>类型: <span>{heroMessage.type}</span></li>
+                            <li>斗技指数: <span>{heroMessage.pkExponent}</span></li>
+                            <li>刷图指数: <span>{heroMessage.brushMapExponent}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -33,84 +41,106 @@ class aboutHero extends Component {
                     <h1>式神评价</h1>
                     <div className="remark">
                         <p className="remarkItem">
-                            黑童子的出现，还有待各种阵容的开发，虽然不能和椒图体系，但是他依旧是目前阴阳师攻击最高的式神。
+                            {heroMessage.heroRemark.remark}
                         </p>
                     </div>
                 </div>
                 <div className="heroSkills heroItem">
                     <h1>式神技能</h1>
-                    <Tabs defaultActiveKey="1" onChange={this.callback}>
+                    <Tabs defaultActiveKey="1" >
                         <TabPane tab="技能1" key="1">
-                            <HeroSkill />
+                            {
+                                heroMessage.skills.map((item, index) => (
+                                    <HeroSkill
+                                        key={index}
+                                        consumption={item.Consumption}
+                                        effect={item.effect}
+                                        skillName={item.name}
+                                        upgrade={item.upgrade}
+                                        style={{ display: index === 0 ? 'block' : 'none' }}
+                                    />
+                                ))
+                            }
                         </TabPane>
                         <TabPane tab="技能2" key="2">
-                            <HeroSkill />
+                            {
+                                heroMessage.skills.map((item, index) => (
+                                    <HeroSkill
+                                        key={index}
+                                        consumption={item.Consumption}
+                                        effect={item.effect}
+                                        skillName={item.name}
+                                        upgrade={item.upgrade}
+                                        style={{ display: index === 1 ? 'block' : 'none' }}
+                                    />
+                                ))
+                            }
                         </TabPane>
                         <TabPane tab="技能3" key="3">
-                            <HeroSkill />
+                            {
+                                heroMessage.skills.map((item, index) => (
+                                    <HeroSkill
+                                        key={index}
+                                        consumption={item.Consumption}
+                                        effect={item.effect}
+                                        skillName={item.name}
+                                        upgrade={item.upgrade}
+                                        style={{ display: index === 2 ? 'block' : 'none' }}
+                                    />
+                                ))
+                            }
                         </TabPane>
                     </Tabs>
                 </div>
                 <div className="awakeMaterial heroItem">
                     <h1>觉醒材料</h1>
                     <ul className="material">
-                        <li>
-                            <p>16</p>
-                            <p>风转轮·中级</p>
-                        </li>
-                        <li>
-                            <p>8</p>
-                            <p>风转轮·高级</p>
-                        </li>
-                        <li>
-                            <p>16</p>
-                            <p>天雷鼓·中级</p>
-                        </li>
-                        <li>
-                            <p>16</p>
-                            <p>天雷鼓·高级</p>
-                        </li>
+                        {
+                            heroMessage.awaken.material.map((item, index) => (
+                                <li key={index}>
+                                    <p>{item.count}</p>
+                                    <p>{item.name}</p>
+                                </li>
+                            ))
+                        }
+
                     </ul>
                     <ul className="skillChange">
-                        {/* <li>
-                            <p>技能</p>
-                            <p><span>觉醒前~ 觉醒后</span></p>
-                        </li>*/}
                         <li>
                             <p>攻击</p>
-                            <p><span>A ~ A</span></p>
+                            <p><span>{heroMessage.awaken.attack.from} ~ {heroMessage.awaken.attack.to}</span></p>
                         </li>
                         <li>
                             <p>生命</p>
-                            <p><span>C ~ A</span></p>
+                            <p><span>{heroMessage.awaken.life.from} ~ {heroMessage.awaken.life.to}</span></p>
                         </li>
                         <li>
                             <p>防御</p>
-                            <p><span>D ~ C</span></p>
+                            <p><span>{heroMessage.awaken.defense.from} ~ {heroMessage.awaken.defense.to}</span></p>
                         </li>
                         <li>
                             <p>速度</p>
-                            <p><span>D ~ C</span></p>
+                            <p><span>{heroMessage.awaken.speed.from} ~ {heroMessage.awaken.speed.to}</span></p>
                         </li>
                         <li>
                             <p>暴击</p>
-                            <p><span>S ~ S</span></p>
+                            <p><span>{heroMessage.awaken.crit.from} ~ {heroMessage.awaken.crit.to}</span></p>
                         </li>
                     </ul>
                     <div className="skillInfo">
-                        <p>技能【连斩】增强，消灭敌人时，会自动追加一次无消耗的连斩，该次伤害减少40%。</p>
+                        <p>{heroMessage.awaken.skill}</p>
                     </div>
                 </div>
                 <div className="defenseMatch heroItem">
                     <h1>御魂搭配</h1>
                     <ul>
-                        <li><span>搭配方案：</span>镇墓兽4件套+暴击2件</li>
-                        <li><span>搭配点评：</span>黑童子是血量越少，伤害越高的高爆发式神，配合镇墓兽在低血量的暴击伤害加成，效果更佳。</li>
+                        <li><span>搭配方案：</span>{heroMessage.heroYuxun.matchInfo}</li>
+                        <li><span>搭配点评：</span>{heroMessage.heroYuxun.matchRemark}</li>
                         <li>
                             <p><span>御魂位置：</span></p>
-                            <p>2号位：攻击加成</p>
-                            <p>4号位：攻击加成</p>
-                            <p>6号位：暴击</p>
+                            <p>{heroMessage.heroYuxun.two}</p>
+                            <p>{heroMessage.heroYuxun.four}</p>
+                            <p>{heroMessage.heroYuxun.six}</p>
                         </li>
                     </ul>
                 </div>
@@ -118,10 +148,10 @@ class aboutHero extends Component {
                     <h1>搭配阵容</h1>
                     <ul className="match">
                         <li>
-                            <img src={require('../../assets/matchhei.jpg')} />
+                            <img src={heroMessage.heroMatchInfo.heroMatchImg} />
                         </li>
-                        <li><span>搭配方案：</span>神乐+黑童子、惠比寿、蝴蝶精、独眼小僧、兵俑。</li>
-                        <li><span>阵容点评：</span>阵容思路是，黑童子+惠比寿+独眼小僧3薙魂体系，薙魂可以触发黑童子的被动反击，独眼的被动加抵抗和反伤，惠比寿的被动回火。蝴蝶精只要奶就够了，推荐树妖，兵俑带返魂香，控制的时候，挨打了还能概率触发眩晕</li>
+                        <li><span>搭配方案：</span>{heroMessage.heroMatchInfo.matchInfo}</li>
+                        <li><span>阵容点评：</span>{heroMessage.heroMatchInfo.matchRemark}</li>
                     </ul>
                 </div>
             </div>
@@ -129,4 +159,8 @@ class aboutHero extends Component {
     }
 }
 
-export default aboutHero;
+export default connect(
+    state => ({
+        heroDetail: state.get('heroDetail'),
+    }),
+)(aboutHero);

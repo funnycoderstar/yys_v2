@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
+
 import '../../styles/raiderList.less';
-import ApiUrl from '../../config/apiUrl.js';
+import { updateHeroStrategy } from '../../redux/action.js';
 
 class raiderList extends Component {
     componentDidMount() {
-        axios.get(ApiUrl.heroStrategyUrl).then((res) => {
-            this.props.dispatch({
-                type: 'updateHeroStrategy',
-                heroStrategy: res.data,
-            });
-        });
+        updateHeroStrategy(this.props.dispatch);
     }
 
     render() {

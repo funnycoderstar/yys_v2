@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import HeroSwiper from '../hero/heroSwiper.jsx';
 import '../../styles/raiderList.less';
-import ApiUrl from '../../config/apiUrl.js';
+import { updateHeroVideo } from '../../redux/action.js';
 
 class raiderList extends Component {
     componentDidMount() {
-        axios.get(ApiUrl.heroVideoUrl).then((res) => {
-            this.props.dispatch({
-                type: 'updateHeroVideo',
-                heroVideo: res.data,
-            });
-        });
-        console.log(this.props.heroVideo);
+        updateHeroVideo(this.props.dispatch);
     }
 
     render() {

@@ -4,6 +4,8 @@ import Raider from 'components/raiders/raiders';
 import Recommend from 'components/recommend/recommend';
 import Video from 'components/video/video';
 
+import { connect } from 'react-redux';
+
 import '../styles/tabBar.less';
 
 class TabBar extends Component {
@@ -42,4 +44,8 @@ class TabBar extends Component {
     }
 }
 
-export default TabBar;
+export default connect(
+    state => ({
+        data: state.data,
+    }),
+)(TabBar);

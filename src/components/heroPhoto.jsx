@@ -3,9 +3,8 @@ import {
     Tabs,
 } from 'antd';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import HeroInfo from './heroInfo.jsx';
-
+import { updateHeros } from '../redux/action.js';
 import '../styles/heroPhoto.less';
 import ApiUrl from '../config/apiUrl.js';
 
@@ -13,13 +12,7 @@ const TabPane = Tabs.TabPane;
 
 class heroPhoto extends Component {
     componentDidMount() {
-        axios.get(ApiUrl.herosUrl).then((res) => {
-            this.props.dispatch({
-                type: 'updateHeros',
-                heros: res.data,
-            });
-        });
-        console.log(this.props.heros);
+        updateHeros(this.props.dispatch);
     }
     render() {
         return (

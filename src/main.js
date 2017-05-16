@@ -16,12 +16,6 @@ require('./config/match.js');
 
 
 const store = createStore(reducer);
-// console.log(store.getState().toJS());
-// store.dispatch({
-//     type: 'updateHeros',
-//     heros: ['1'],
-// });
-// console.log(store.getState().toJS());
 ReactDom.render(
     <Provider store={store}>
         <App />
