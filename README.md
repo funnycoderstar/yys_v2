@@ -2,10 +2,21 @@
 
 > 阴阳师小助手第二版
 
-#### 技术栈
-- react + react-router + es6 + webpack
-- 使用mock拦截ajax请求,产生随机数据
-- 使用ant-design
+## 效果图
+
+<img src="./src/assets/search.png" width="200" />
+<img src="./src/assets/index.png" width="200" />
+
+## 基本
+    - 构建工具：webpack；
+    - 语言：Es6；
+    - 代码规范：eslint
+    - 应用：react，
+           redux，
+           react-router，
+           ant-design，
+           axios,
+           immutable,
 
 ## Build Setup
 
@@ -19,3 +30,5 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+## [阴阳师小助手后端实现](https://github.com/funnycoderstar/yys-be)
+- nodejs + crawler + koa2 + mongoose
