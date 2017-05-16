@@ -51,5 +51,6 @@ module.exports = {
         'react/prop-types': 0,
         'linebreak-style': 0,
         'react/jsx-no-bind': 0,
+        'max-len': 0,
     }
 };
