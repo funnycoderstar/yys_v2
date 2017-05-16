@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import HeroSwiper from '../hero/heroSwiper.jsx';
 import '../../styles/raiderList.less';
 import ApiUrl from '../../config/apiUrl.js';
 
 class raiderList extends Component {
     componentDidMount() {
-        axios.get(ApiUrl.heroStrategyUrl).then((res) => {
+        axios.get(ApiUrl.heroVideoUrl).then((res) => {
             this.props.dispatch({
-                type: 'updateHeroStrategy',
-                heroStrategy: res.data,
+                type: 'updateHeroVideo',
+                heroVideo: res.data,
             });
         });
+        console.log(this.props.heroVideo);
     }
 
     render() {
         return (
-            <div>{
-                this.props.heroStrategy.map((item, index) => (
-                    <div className="raiderList" key={index}>
+            <div className="pageContainer">
+                <HeroSwiper />
+                {
+                this.props.heroVideo.map((item, index) => (
+
+                    <a className="raiderList" key={index} href={item.href}>
                         <div className="listImg">
                             <img src={item.imgSrc} alt="" />
                         </div>
@@ -30,7 +35,7 @@ class raiderList extends Component {
                                 {item.desc[0]}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))
             }</div>
 
@@ -40,6 +45,6 @@ class raiderList extends Component {
 
 export default connect(
     state => ({
-        heroStrategy: state.get('heroStrategy'),
+        heroVideo: state.get('heroVideo'),
     }),
 )(raiderList);
