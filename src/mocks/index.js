@@ -1,7 +1,7 @@
 import Mock from 'mockjs';
 // 式神数据
 Mock.mock(/heros/, {
-    [
+    data: [
     {
         "_id": "591734e24efedb26eb79e391",
         "name": "辉夜姬",
@@ -106,7 +106,7 @@ Mock.mock(/heros/, {
 
 // 式神视频
 Mock.mock(/heroVideo/, {
-    [
+    data:[
     {
         "_id": "59172cd3f68ccd24e129de85",
         "href": "http://www.18183.com/yys/201705/851769.html",
@@ -231,7 +231,7 @@ Mock.mock(/heroVideo/, {
 });
 // 式神攻略
 Mock.mock(/heroStrategy/, {
-    [
+    data:[
     {
         "_id": "59172cd3f68ccd24e129de84",
         "href": "http://www.18183.com/yys/201705/852198.html",

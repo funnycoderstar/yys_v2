@@ -20,6 +20,7 @@ class App extends Component {
             <div>
                 <Router>
                     <div>
+                        <Route path="/" component={TabBar} />
                         <Route path="/index" component={TabBar} />
                         <Route path="/search" component={Search} />
                         <Route path="/heroPhoto" component={HeroPhoto} />

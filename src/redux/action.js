@@ -5,7 +5,7 @@ export function updateHeros(dispatch) {
     return axios.get(ApiUrl.herosUrl).then((res) => {
         dispatch({
             type: 'updateHeros',
-            heros: res.data,
+            heros: res.data.data,
         });
     });
 }
@@ -14,7 +14,7 @@ export function updateHeroVideo(dispatch) {
     return axios.get(ApiUrl.heroVideoUrl).then((res) => {
         dispatch({
             type: 'updateHeroVideo',
-            heroVideo: res.data,
+            heroVideo: res.data.data,
         });
     });
 }
@@ -23,17 +23,17 @@ export function updateHeroStrategy(dispatch) {
     return axios.get(ApiUrl.heroStrategyUrl).then((res) => {
         dispatch({
             type: 'updateHeroStrategy',
-            heroStrategy: res.data,
+            heroStrategy: res.data.data,
         });
     });
 }
 
 export function updateHeroDetail(dispatch, heroName) {
     return axios.get(`${ApiUrl.heroDetailUrl}/${heroName}`).then((res) => {
-        console.log(res.data);
+        console.log(res.data.data);
         dispatch({
             type: 'updateHeroDetail',
-            heroDetail: res.data,
+            heroDetail: res.data.data,
         });
     });
 }
